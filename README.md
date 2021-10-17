@@ -1,0 +1,3 @@
+# webers-law-tester
+
+On the command line, run python 
