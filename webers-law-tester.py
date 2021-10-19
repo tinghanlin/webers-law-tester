@@ -52,11 +52,11 @@ def draw_plots(n1, n2, pause_second, block):
 def response(index):
     while True:
         try:
-            ans = int(raw_input("Press 1 for Left\nPress 0 for Right\nInsert your answer: "))
+            ans = int(input("Press 1 for Left\nPress 0 for Right\nInsert your answer: "))
         except ValueError:
             print (colored("Try again! Please press 1 or press 0\n","red"))
         else:
-            if ans is not 1 and ans is not 0:
+            if (ans != 1) and (ans != 0):
                 print (colored("Try again! Please press 1 or press 0\n", "red"))
             else:
                 #detect if the response if correct or not
@@ -78,7 +78,7 @@ def staircase(number_of_dot, reaction_time, start, mis_num, increment, recover):
 
     #trial will stop when the participants make a certain number of mistakes
     while mistake_counter<mis_num:
-        print "Which plot has more dots?"
+        print ("Which plot has more dots?")
         #decrease the number of one subplot by staircase
         index = draw_plots(number_of_dot, init-increment, reaction_time, 0)
         init=init-increment
@@ -133,8 +133,8 @@ print(colored("Before starting the study, please adjust the position of your ter
               "so that it is not blocking the plots shown.", "red"))
 time.sleep(6)
 draw_plots(20, 30, 3, 1)
-get_ready = raw_input(colored("Please press ENTER key to continue!\n", "red"))
-get_ready = raw_input(colored("Later, we will ask you to pick which subplot has more dots.\n"+
+get_ready = input(colored("Please press ENTER key to continue!\n", "red"))
+get_ready = input(colored("Later, we will ask you to pick which subplot has more dots.\n"+
                               "Press 1 if the left subplot has more dots.\n"+
                               "Press 0 if the right subplot has more dots.\n"+
                               "You will only have 1 second to answer each question.\n"
@@ -156,13 +156,13 @@ for i in trail_list:
     section_counter += 1
     if i !=200:
         print(colored("\nSection "+str(section_counter)+"/10", "red"))
-        get_ready = raw_input(colored("Please press ENTER key when you are ready to start!", "red"))
+        get_ready = input(colored("Please press ENTER key when you are ready to start!", "red"))
 
 #show the study results
 print(colored("\nThanks!", "red"))
 print(colored("\nHere are study results", "red"))
 for i in range(len(final)):
-    print "You are able to tell which subplot has "+str(final[i][0])+" dots, when the difference between the number of dots is around "+str(final[i][1])+" dots"
+    print ("You are able to tell which subplot has "+str(final[i][0])+" dots, when the difference between the number of dots is around "+str(final[i][1])+" dots")
 
 print(colored("\nHere are the raw data for researchers: ", "red"))
-print str(final)
+print (str(final))
